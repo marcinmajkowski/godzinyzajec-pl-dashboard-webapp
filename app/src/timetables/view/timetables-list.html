@@ -1,0 +1,8 @@
+<md-card ng-repeat="timetable in vm.getTimetables()">
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">{{timetable.name}}</span>
+            <a href class="md-subhead" ng-click="vm.deleteTimetable(timetable)">[usuń]</a>
+        </md-card-title-text>
+    </md-card-title>
+</md-card>

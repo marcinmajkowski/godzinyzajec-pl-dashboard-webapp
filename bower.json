@@ -1,0 +1,14 @@
+{
+  "name": "godzinyzajec-pl-dashboard-webapp",
+  "description": "The code that powers http://dashboard.godzinyzajec.pl",
+  "version": "0.0.0",
+  "homepage": "https://godzinyzajec.pl",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular-material": "~1.1.0",
+    "angular-route": "^1.4.8",
+    "angular-resource": "^1.4.8",
+    "angular-mocks": "^1.4.8"
+  }
+}

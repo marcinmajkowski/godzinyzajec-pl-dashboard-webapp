@@ -1,0 +1,21 @@
+<form name="registrationForm">
+    <div layout="row" flex layout-align="center">
+        <div layout="column" flex-xs flex-sm="66" flex-md="50" flex-lg="33" flex-xl="20">
+            <md-input-container>
+                <label>Nazwa użytkownika</label>
+                <!-- TODO .godzinyzajec.pl -->
+                <input ng-model="vm.user.username">
+            </md-input-container>
+            <md-input-container>
+                <label>E-mail</label>
+                <input type="email" ng-model="vm.user.email">
+            </md-input-container>
+            <md-input-container>
+                <label>Hasło</label>
+                <input type="password" ng-model="vm.user.password">
+            </md-input-container>
+            <md-button class="md-raised md-primary" type="submit" ng-click="vm.register(vm.user)">Zarejestruj się</md-button>
+            <md-button ng-href="#/login">Zaloguj się</md-button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+
+<head>
+  <title>dashboard.godzinyzajec.pl</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,700'>
+  <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
+  <link rel="stylesheet" href="/assets/app.css">
+
+  <style type="text/css">
+    /**
+     * Hide when Angular is not yet loaded and initialized
+     */
+    
+    [ng\:cloak],
+    [ng-cloak],
+    [data-ng-cloak],
+    [x-ng-cloak],
+    .ng-cloak,
+    .x-ng-cloak {
+      display: none !important;
+    }
+  </style>
+</head>
+
+<body ng-app="godzinyzajecPlDashboard" layout="column" ng-controller="MainController as vm" ng-cloak>
+
+  <md-toolbar layout="row" class="md-toolbar-tools">
+
+    <div ng-if="!vm.authenticated() || vm.media('gt-xs')">
+      <a ng-href="#/">dashboard.godzinyzajec.pl</a>
+    </div>
+
+    <div flex></div>
+
+    <span ng-if="vm.authenticated()">Zalogowany jako User</span>
+
+    <md-menu ng-if="vm.authenticated()" md-position-mode="target-right target">
+      <md-button class="md-icon-button" aria-label="More" ng-click="$mdOpenMenu($event)">
+        <md-icon md-svg-icon="more_vert"></md-icon>
+      </md-button>
+      <md-menu-content width="4">
+        <md-menu-item>
+          <md-button ng-href="#/user-profile">
+            <div layout="row" flex>
+              <p flex>Edytuj profil</p>
+            </div>
+          </md-button>
+        </md-menu-item>
+        <md-menu-item>
+          <md-button ng-click="vm.logout()">
+            <div layout="row" flex>
+              <p flex>Wyloguj</p>
+            </div>
+          </md-button>
+        </md-menu-item>
+      </md-menu-content>
+    </md-menu>
+
+  </md-toolbar>
+
+  <md-content layout="column" id="content">
+    <div layout-padding ng-view></div>
+  </md-content>
+
+  <script src="/bower_components/angular/angular.js"></script>
+  <script src="/bower_components/angular-aria/angular-aria.js"></script>
+  <script src="/bower_components/angular-animate/angular-animate.js"></script>
+  <script src="/bower_components/angular-resource/angular-resource.js"></script>
+  <script src="/bower_components/angular-route/angular-route.js"></script>
+  <script src="/bower_components/angular-material/angular-material.js"></script>
+
+  <script src="/src/godzinyzajec-pl-dashboard.module.js"></script>
+  <script src="/src/godzinyzajec-pl-dashboard.config.js"></script>
+  <script src="/src/godzinyzajec-pl-dashboard.constants.js"></script>
+  <script src="/src/godzinyzajec-pl-dashboard.routes.js"></script>
+
+  <script src="/src/authentication/authentication.module.js"></script>
+  <script src="/src/authentication/authentication.service.js"></script>
+
+  <script src="/src/layout/layout.module.js"></script>
+  <script src="/src/layout/main.controller.js"></script>
+
+  <script src="/src/home/home.module.js"></script>
+  <script src="/src/home/home.controller.js"></script>
+
+  <script src="/src/users/users.module.js"></script>
+  <script src="/src/users/users.service.js"></script>
+  <!-- TODO move from users module -->
+  <script src="/src/users/login.controller.js"></script>
+  <!-- TODO move from users module -->
+  <script src="/src/users/registration.controller.js"></script>
+
+  <script src="/src/user-profile/user-profile.module.js"></script>
+  <script src="/src/user-profile/user-profile.service.js"></script>
+  <script src="/src/user-profile/user-profile.controller.js"></script>
+
+  <script src="/src/timetables/timetables.module.js"></script>
+  <script src="/src/timetables/timetables.service.js"></script>
+  <script src="/src/timetables/new-timetable-form.controller.js"></script>
+  <script src="/src/timetables/new-timetable-form.directive.js"></script>
+  <script src="/src/timetables/timetables-list.controller.js"></script>
+  <script src="/src/timetables/timetables-list.directive.js"></script>
+</body>
+
+</html>

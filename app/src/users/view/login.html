@@ -1,0 +1,16 @@
+<form name="loginForm">
+    <div layout="row" flex layout-align="center">
+        <div layout="column" flex-xs flex-sm="66" flex-md="50" flex-lg="33" flex-xl="20">
+            <md-input-container>
+                <label>Nazwa użytkownika lub e-mail</label>
+                <input ng-model="vm.credentials.username">
+            </md-input-container>
+            <md-input-container>
+                <label>Hasło</label>
+                <input type="password" ng-model="vm.credentials.password">
+            </md-input-container>
+            <md-button class="md-raised md-primary" type="submit" ng-click="vm.login(vm.credentials)">Zaloguj się</md-button>
+            <md-button ng-href="#/registration">Zarejestruj się</md-button>
+        </div>
+    </div>
+</form>
